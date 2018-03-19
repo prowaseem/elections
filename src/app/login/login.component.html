@@ -1,0 +1,22 @@
+<div class="d-flex flex-row justify-content-center align-items-center" novalidate>
+    <form
+      class="needs-validation"
+      [formGroup]="loginForm"
+      (ngSubmit)="send()">
+        <div class="form-group">
+          <label for="cnicField">CNIC</label>
+          <input type="text" class="form-control" id="cnicField" formControlName="cnic" aria-describedby="cnic" placeholder="Enter CNIC number">
+          <div class="invalid-feedback" *ngIf="cnic.invalid" >
+              CNIC is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="mobileField">Mobile</label>
+          <input type="text" class="form-control" id="mobileField" formControlName="mobile" placeholder="Enter Mobile">
+          <div class="invalid-feedback" *ngIf="cnic.invalid" >
+              Mobile is required.
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </div>
