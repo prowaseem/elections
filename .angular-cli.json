@@ -19,12 +19,9 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-<<<<<<< HEAD
-        "styles.css"
-=======
-        "../node_modules/bootstrap/dist/css/bootstrap.min.cs",
+        "../node_modules/bootstrap/scss/bootstrap.scss",
+        "../node_modules/ngx-toastr/toastr.css",
         "styles.scss"
->>>>>>> eb48a168cb90c300d362d78649d4589a570468e9
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
@@ -59,11 +56,7 @@
     }
   },
   "defaults": {
-<<<<<<< HEAD
-    "styleExt": "css",
-=======
     "styleExt": "scss",
->>>>>>> eb48a168cb90c300d362d78649d4589a570468e9
     "component": {}
   }
 }

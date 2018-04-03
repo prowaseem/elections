@@ -1,3 +1,43 @@
+<div id="login-form" class="d-flex flex-row align-items-stretch justify-content-center">
+  <form action="#" class="needs-validation " novalidate [formGroup]="loginForm" (ngSubmit)="send()">
+    <div class="form-group">
+      <label for="cnicField" class="sr-only">CNIC</label>
+      <input type="text"
+             id="cnicField"
+             class="form-control"
+             [ngClass]="{'is-invalid': cnic.invalid && cnic.touched, 'is-valid': cnic.valid && cnic.touched}"
+             formControlName="cnic"
+             aria-describedby="cnic"
+             placeholder="Enter CNIC number"
+             autocomplete="off"
+             required
+      >
+      <div class="invalid-feedback" *ngIf="cnic.invalid && cnic.touched">
+        CNIC is required. Format: 12345-6789012-3
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="mobileField" class="sr-only">Mobile</label>
+      <input type="text"
+             id="mobileField"
+             class="form-control"
+             [ngClass]="{'is-invalid': mobile.invalid && mobile.touched, 'is-valid': mobile.valid && mobile.touched}"
+             formControlName="mobile"
+             aria-describedby="mobile"
+             placeholder="Enter Mobile number"
+             autocomplete="off"
+             required
+      >
+      <div class="invalid-feedback" *ngIf="mobile.invalid && mobile.touched">
+        Mobile is required. Format: 0300-1234567
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+</div>
+<!--
 <div class="d-flex flex-row justify-content-center align-items-center" novalidate>
     <form
       class="needs-validation"
@@ -13,10 +53,11 @@
         <div class="form-group">
           <label for="mobileField">Mobile</label>
           <input type="text" class="form-control" id="mobileField" formControlName="mobile" placeholder="Enter Mobile">
-          <div class="invalid-feedback" *ngIf="cnic.invalid" >
+          <div class="invalid-feedback" *ngIf="mobile.invalid" >
               Mobile is required.
           </div>
         </div>
         <button type="submit" class="btn btn-primary">Login</button>
     </form>
   </div>
+-->

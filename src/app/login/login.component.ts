@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+
+// custom validators
+import validateCNIC from '../helpers/validators/validateCNIC';
+import validateMOBILE from '../helpers/validators/validateMOBILE';
 
 @Component({
   selector: 'app-login',
@@ -10,10 +15,13 @@ export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup;
 
-  constructor(fb: FormBuilder) {
-    this.loginForm = fb.group({
-      cnic: [null, Validators.required],
-      mobile: [null, Validators.required]
+  constructor(
+    private fb: FormBuilder,
+    private toastr: ToastrService
+  ) {
+    this.loginForm = this.fb.group({
+      cnic: [null, Validators.compose([validateCNIC, Validators.required])],
+      mobile: [null, Validators.compose([validateMOBILE, Validators.required])]
     });
   }
   get cnic() {
@@ -23,7 +31,9 @@ export class LoginComponent implements OnInit {
     return this.loginForm.get('mobile') as FormControl;
   }
   send() {
-    console.log(this.loginForm);
+    if (!this.loginForm.valid) {
+      this.toastr.error('Your information is incorrect.', 'Alert');
+    }
   }
 
   ngOnInit() {
