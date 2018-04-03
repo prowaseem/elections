@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   constructor(fb: FormBuilder) {
     this.loginForm = fb.group({
       cnic: [null, Validators.required],
-      mobile: null
+      mobile: [null, Validators.required]
     });
   }
   get cnic() {
