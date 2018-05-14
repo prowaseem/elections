@@ -3,20 +3,26 @@
       class="needs-validation"
       [formGroup]="loginForm"
       (ngSubmit)="send()">
-        <div class="form-group">
-          <label for="cnicField">CNIC</label>
-          <input type="text" class="form-control" id="cnicField" formControlName="cnic" aria-describedby="cnic" placeholder="Enter CNIC number">
-          <div class="invalid-feedback" *ngIf="cnic.invalid" >
-              CNIC is required.
+        <div class="form-group row">
+          <label for="cnicField" class="col-sm-3 col-form-label">CNIC</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="cnicField" autocomplete="off" formControlName="cnic" aria-describedby="cnic" placeholder="Enter CNIC number">
+            <div class="invalid-feedback" *ngIf="cnic.invalid" >
+                CNIC is required.
+            </div>
           </div>
         </div>
-        <div class="form-group">
-          <label for="mobileField">Mobile</label>
-          <input type="text" class="form-control" id="mobileField" formControlName="mobile" placeholder="Enter Mobile">
-          <div class="invalid-feedback" *ngIf="cnic.invalid" >
-              Mobile is required.
+        <div class="form-group row">
+          <label for="mobileField" class="col-sm-3 col-form-label">Mobile</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="mobileField" autocomplete="off" formControlName="mobile" placeholder="Enter Mobile">
+            <div class="invalid-feedback" *ngIf="cnic.invalid" >
+                Mobile is required.
+            </div>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
+        <div class="d-flex flex-row justify-content-center">
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </div>
     </form>
   </div>

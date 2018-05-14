@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     return this.loginForm.get('mobile') as FormControl;
   }
   send() {
-    console.log(this.loginForm);
+    console.log(this.loginForm.getRawValue());
   }
 
   ngOnInit() {
