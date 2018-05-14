@@ -1,2 +1,2 @@
 # Introduction #
-Elections web app based on Angular 5
+Elections web app based on Angular 6.
